@@ -1,0 +1,12 @@
+# Managed by Dragon Driver
+[Unit]
+Description=Dragon Driver desktop socket
+
+[Socket]
+ListenStream=%t/dragon-driver/daemon.sock
+SocketMode=0600
+DirectoryMode=0700
+RemoveOnStop=yes
+
+[Install]
+WantedBy=sockets.target

@@ -1,0 +1,11 @@
+# Desktop wallpaper discovery
+
+The per-user daemon uses the desktop-source approach from Wallpaper Aura. [Wallpaper Aura](https://github.com/vibudh007/wallpaper-aura)
+
+- COSMIC follows the active primary output from the compositor and reads that connector's current image from the wallpaper state. When **Same wallpaper on all displays** is enabled, the shared `all` configuration takes priority for a single image. A shared folder uses the active connector's rendered image from the state. [COSMIC output watcher](cosmic_outputs.md) · [COSMIC wallpaper state writer](https://github.com/pop-os/cosmic-bg/blob/master/src/wallpaper.rs)
+- KDE Plasma asks Plasma Shell for screen 0, the first active screen in Plasma's ordered screen pool. The daemon refreshes on wallpaper signals and watches Plasma and KWin display configuration, with a KScreen configuration watch for older Plasma. [Plasma screen pool](https://github.com/KDE/plasma-workspace/blob/master/shell/screenpool.cpp) · [Plasma wallpaper API](https://github.com/KDE/plasma-workspace/blob/master/shell/dbus/org.kde.PlasmaShell.xml)
+- GNOME follows the picture URI for the current light or dark appearance. GNOME shares this wallpaper across active displays, including the primary. Mutter's monitor notification refreshes the source and an empty logical monitor list means no active display. [Mutter display API](https://github.com/GNOME/mutter/blob/main/data/dbus-interfaces/org.gnome.Mutter.DisplayConfig.xml)
+
+`Source::watch` registers native settings or D-Bus notifications and file monitors. `relay_watched` owns those registrations for one subscription. `relay` sends a new payload when the resolved file changes or its image monitor reports a write or replacement. A desktop settings notification resolving to the same file skips reading and transferring the image again. File monitors use no rate-limit delay. The daemon closes its watches at client disconnect. An unavailable wallpaper is sent as an empty payload so a later update can recover.
+
+`local_path` accepts absolute paths and local file URIs. `read_regular` checks the kind and size of the open file and caps the read even if the file grows. The root service does not participate. Solid colors, wallpaper packages and slideshow formats without a current supported image are outside this implementation.

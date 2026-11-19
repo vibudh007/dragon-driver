@@ -1,0 +1,7 @@
+# Keyboard ring and automatic ripple
+
+`KeyboardPreview::ring_ripple` creates mode 8 with a bounded queue of manual pulses. `automatic_ripple` creates mode 14, generating original CRT random choices from seed 3. `ring` constructs their common state. `Wave::new` picks the first radius for inward or outward travel. `next_rand` implements the 15-bit Windows CRT generator with unsigned wrapping arithmetic.
+
+`Ring::press` records manual events and their colors. `tick` dims active cells, then advances pulses every fourth tick. `advance` computes the grid distance and the matching layer and brightness. `Auto::new` builds the seeded choice stream and `schedule` selects the next packed coordinate and color. `current_color` reads the selected manual color. `automatic_ripple_pending` reports a new automatic trigger. `current_automatic_ripple` returns the last trigger and clears that flag, and `current_automatic_ripple_config` provides the raw five-word default value.
+
+The source routines are `0x1000b660`, `0x1000b760`, `0x10009760`, `0x10009640`, `0x10009cb0`, `0x10009d30`, and `0x100106b0`. The recorded traces cover a manual mono pulse and the seeded automatic rainbow sequence. The preview session preserves manual and automatic clocks, the choice cursors, and the PRNG across configuration changes. Reinitializing mode 14 reseeds the same CRT sequence. The callback flag clears on the next tick after reading the report.

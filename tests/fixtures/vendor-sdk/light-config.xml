@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Parameters profileIndex="1">
+    <config index="3" name="Colors" proFileAppName="" proFileAppIco="">
+        <light0 usingIndex="4" ledOpenOrClose="0" SynchronizeStatus="0">
+            <item ledKeyboardOrSide="0" ledType="0" ledBrightness="52" ledSpeed="5" ledModeR="20" ledModeG="40" ledModeB="60" ledBgR="2" ledBgG="4" ledBgB="6" ledDirection="3" ledModeType="1" ledOpenOrClose="0" ledUpdate="0" />
+            <item ledKeyboardOrSide="0" ledType="1" ledBrightness="31" ledSpeed="2" ledModeR="45" ledModeG="23" ledModeB="12" ledBgR="2" ledBgG="4" ledBgB="8" ledDirection="5" ledModeType="0" ledOpenOrClose="0" ledUpdate="0" />
+            <item ledKeyboardOrSide="0" ledType="2" ledBrightness="0" ledSpeed="0" ledModeR="0" ledModeG="0" ledModeB="0" ledBgR="0" ledBgG="0" ledBgB="0" ledDirection="0" ledModeType="0" ledOpenOrClose="0" ledUpdate="0" />
+            <item ledKeyboardOrSide="0" ledType="3" ledBrightness="0" ledSpeed="0" ledModeR="0" ledModeG="0" ledModeB="0" ledBgR="0" ledBgG="0" ledBgB="0" ledDirection="0" ledModeType="0" ledOpenOrClose="0" ledUpdate="0" />
+            <item ledKeyboardOrSide="0" ledType="4" ledBrightness="0" ledSpeed="0" ledModeR="0" ledModeG="0" ledModeB="0" ledBgR="0" ledBgG="0" ledBgB="0" ledDirection="0" ledModeType="0" ledOpenOrClose="0" ledUpdate="0" />
+            <item ledKeyboardOrSide="0" ledType="5" ledBrightness="0" ledSpeed="0" ledModeR="0" ledModeG="0" ledModeB="0" ledBgR="0" ledBgG="0" ledBgB="0" ledDirection="0" ledModeType="0" ledOpenOrClose="0" ledUpdate="0" />
+            <item ledKeyboardOrSide="0" ledType="6" ledBrightness="0" ledSpeed="0" ledModeR="0" ledModeG="0" ledModeB="0" ledBgR="0" ledBgG="0" ledBgB="0" ledDirection="0" ledModeType="0" ledOpenOrClose="0" ledUpdate="0" />
+            <item ledKeyboardOrSide="0" ledType="7" ledBrightness="0" ledSpeed="0" ledModeR="0" ledModeG="0" ledModeB="0" ledBgR="0" ledBgG="0" ledBgB="0" ledDirection="0" ledModeType="0" ledOpenOrClose="0" ledUpdate="0" />
+            <item ledKeyboardOrSide="0" ledType="8" ledBrightness="0" ledSpeed="0" ledModeR="0" ledModeG="0" ledModeB="0" ledBgR="0" ledBgG="0" ledBgB="0" ledDirection="0" ledModeType="0" ledOpenOrClose="0" ledUpdate="0" />
+            <item ledKeyboardOrSide="0" ledType="9" ledBrightness="0" ledSpeed="0" ledModeR="0" ledModeG="0" ledModeB="0" ledBgR="0" ledBgG="0" ledBgB="0" ledDirection="0" ledModeType="0" ledOpenOrClose="0" ledUpdate="0" />
+            <item ledKeyboardOrSide="0" ledType="10" ledBrightness="0" ledSpeed="0" ledModeR="0" ledModeG="0" ledModeB="0" ledBgR="0" ledBgG="0" ledBgB="0" ledDirection="0" ledModeType="0" ledOpenOrClose="0" ledUpdate="0" />
+            <item ledKeyboardOrSide="0" ledType="11" ledBrightness="0" ledSpeed="0" ledModeR="0" ledModeG="0" ledModeB="0" ledBgR="0" ledBgG="0" ledBgB="0" ledDirection="0" ledModeType="0" ledOpenOrClose="0" ledUpdate="0" />
+            <item ledKeyboardOrSide="0" ledType="12" ledBrightness="0" ledSpeed="0" ledModeR="0" ledModeG="0" ledModeB="0" ledBgR="0" ledBgG="0" ledBgB="0" ledDirection="0" ledModeType="0" ledOpenOrClose="0" ledUpdate="0" />
+            <item ledKeyboardOrSide="0" ledType="13" ledBrightness="0" ledSpeed="0" ledModeR="0" ledModeG="0" ledModeB="0" ledBgR="0" ledBgG="0" ledBgB="0" ledDirection="0" ledModeType="0" ledOpenOrClose="0" ledUpdate="0" />
+            <item ledKeyboardOrSide="0" ledType="14" ledBrightness="0" ledSpeed="0" ledModeR="0" ledModeG="0" ledModeB="0" ledBgR="0" ledBgG="0" ledBgB="0" ledDirection="0" ledModeType="0" ledOpenOrClose="0" ledUpdate="0" />
+            <item ledKeyboardOrSide="0" ledType="15" ledBrightness="0" ledSpeed="0" ledModeR="0" ledModeG="0" ledModeB="0" ledBgR="0" ledBgG="0" ledBgB="0" ledDirection="0" ledModeType="0" ledOpenOrClose="0" ledUpdate="0" />
+            <item ledKeyboardOrSide="0" ledType="16" ledBrightness="0" ledSpeed="0" ledModeR="0" ledModeG="0" ledModeB="0" ledBgR="0" ledBgG="0" ledBgB="0" ledDirection="0" ledModeType="0" ledOpenOrClose="0" ledUpdate="0" />
+            <item ledKeyboardOrSide="0" ledType="17" ledBrightness="0" ledSpeed="0" ledModeR="0" ledModeG="0" ledModeB="0" ledBgR="0" ledBgG="0" ledBgB="0" ledDirection="0" ledModeType="0" ledOpenOrClose="0" ledUpdate="0" />
+            <item ledKeyboardOrSide="0" ledType="18" ledBrightness="0" ledSpeed="0" ledModeR="0" ledModeG="0" ledModeB="0" ledBgR="0" ledBgG="0" ledBgB="0" ledDirection="0" ledModeType="0" ledOpenOrClose="0" ledUpdate="0" />
+            <item ledKeyboardOrSide="0" ledType="19" ledBrightness="0" ledSpeed="0" ledModeR="0" ledModeG="0" ledModeB="0" ledBgR="0" ledBgG="0" ledBgB="0" ledDirection="0" ledModeType="0" ledOpenOrClose="0" ledUpdate="0" />
+        </light0>
+        <light1 usingIndex="2" />
+        <light2 usingIndex="2" />
+        <customColor />
+        <customLight />
+        <ribbon />
+        <onboardBinding />
+        <keyEvent />
+        <dpi />
+        <function>
+            <Setting feature1="0" feature2="0" feature3="0" feature4="1" />
+            <SleepTime lightSleepTime="600" keyboardSleepTime="30" />
+        </function>
+        <bindMacro />
+    </config>
+</Parameters>

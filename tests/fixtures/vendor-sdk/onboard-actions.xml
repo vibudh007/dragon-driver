@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Parameters profileIndex="1">
+    <config index="3" name="Events" proFileAppName="" proFileAppIco="">
+        <light0 usingIndex="2" ledOpenOrClose="0" SynchronizeStatus="0" />
+        <light1 usingIndex="2" />
+        <light2 usingIndex="2" />
+        <customColor />
+        <customLight />
+        <ribbon />
+        <onboardBinding />
+        <keyEvent>
+            <item keyCode="41" keyChar="Esc" operateType="0" repeatNum="1" mode="1" Value="4" />
+            <item keyCode="58" keyChar="F1" operateType="0" repeatNum="1" mode="1" Value="-10" />
+            <item keyCode="59" keyChar="F2" operateType="1" repeatNum="7" mode="3" Value="0" />
+            <item keyCode="60" keyChar="F3" operateType="2" repeatNum="1" mode="1" Value="2,4" />
+            <item keyCode="61" keyChar="F4" operateType="2" repeatNum="1" mode="1" Value="5,1" />
+            <item keyCode="62" keyChar="F5" operateType="3" repeatNum="1" mode="1" Value="0" />
+            <item keyCode="63" keyChar="F6" operateType="3" repeatNum="1" mode="1" Value="2" />
+            <item keyCode="64" keyChar="F7" operateType="4" repeatNum="1" mode="1" Value="1" />
+            <item keyCode="65" keyChar="F8" operateType="4" repeatNum="1" mode="1" Value="4" />
+        </keyEvent>
+        <dpi />
+        <function>
+            <Setting feature1="0" feature2="0" feature3="0" feature4="1" />
+            <SleepTime lightSleepTime="600" keyboardSleepTime="30" />
+        </function>
+        <bindMacro>
+            <macro index="0" name="Macro0">
+                <item mark="mark-0123456789" delay="20" type="key" keyCode="4" codeName="A" operateExplain="down" />
+                <item mark="mark-0123456789" delay="200" type="key" keyCode="4" codeName="A" operateExplain="up" />
+                <item mark="mark-0123456789" delay="272" type="mouse" keyCode="513" codeName="Left Click Down" operateExplain="down" />
+                <item mark="mark-0123456789" delay="1" type="mouse" keyCode="514" codeName="Left Click Up" operateExplain="up" />
+                <item mark="mark-0123456789" delay="256" type="key" keyCode="13" codeName="J" operateExplain="down" />
+            </macro>
+        </bindMacro>
+    </config>
+</Parameters>

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Dragon Driver
+Comment=Set up your keyboard
+Exec=dragon-driver
+Icon=org.dragondriver.DragonDriver
+Type=Application
+Categories=Settings;HardwareSettings;
+Terminal=false
+StartupNotify=true

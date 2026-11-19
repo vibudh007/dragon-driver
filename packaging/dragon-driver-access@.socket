@@ -1,0 +1,13 @@
+# Managed by Dragon Driver
+[Unit]
+Description=Dragon Driver access socket for UID %i
+
+[Socket]
+ListenStream=/run/dragon-driver/%i.sock
+SocketUser=%i
+SocketMode=0600
+DirectoryMode=0755
+RemoveOnStop=yes
+
+[Install]
+WantedBy=sockets.target

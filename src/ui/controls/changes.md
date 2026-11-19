@@ -1,0 +1,5 @@
+# Live lighting updates
+
+`Changes` holds at most one queued effect change and one brightness change per region, plus one color change per custom slot. It serializes sends through the same worker as device reads. A 120 ms quiet period combines quick control adjustments. A newer edit supersedes queued edits for the same setting or slot. Brightness-only changes read the active effect immediately before sending its settings, preserving the mode and its parameters. They send no custom RGB chunks. A fixed connection revision prevents applying a queued edit to a replacement session.
+
+`Change::send` sends a vendor effect packet or delegates a complete custom frame to `Device::apply_palette`. The worker invalidates the saved slot before sending, then records custom colors after the complete transfer and a matching Custom mode and brightness reply. The firmware response has no demonstrated per-key RGB payload. GTK control updates driven by readback perform no settings writes. First-connection palette initialization runs on the worker as a separate step.

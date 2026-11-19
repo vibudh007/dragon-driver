@@ -1,0 +1,29 @@
+.dragon-driver .device-bar { padding: 9px 16px; }
+.dragon-driver .device-bar .brand { font-weight: bold; }
+.dragon-driver .status { padding: 5px 14px; }
+.dragon-driver .page-header { padding: 0 0 8px; border-bottom: 1px solid alpha(currentColor, 0.20); }
+.dragon-driver .panel {
+  padding: 9px 14px 11px;
+  border: 1px solid alpha(currentColor, 0.18);
+  border-radius: 10px;
+  background-color: alpha(currentColor, 0.035);
+}
+.dragon-driver .panel-heading { padding: 1px 0 4px; }
+.dragon-driver .settings-row { padding: 4px 0; }
+.dragon-driver .panel > .settings-row + .settings-row { border-top: 1px solid alpha(currentColor, 0.12); }
+.dragon-driver .panel-footer { padding-top: 3px; }
+.dragon-driver .selection-bar, .dragon-driver .section-disclosure {
+  padding: 6px 12px;
+  border: 1px solid alpha(currentColor, 0.18);
+  border-radius: 8px;
+}
+.dragon-driver .section-disclosure > title { font-weight: bold; padding: 5px 0; }
+.dragon-driver .keybed { padding: 9px; }
+.dragon-driver button.keycap { padding: 0 2px; min-height: 20px; border: 1px solid black; min-width: 0; font-size: 0.8em; }
+.dragon-driver .lighting-preview button.keycap:checked { box-shadow: inset 0 0 0 1px currentColor; }
+.dragon-driver button.travel-action { min-width: 9em; }
+.wheel-panel { padding: 10px; }
+.dragon-driver .color-wheel-button { min-width: 38px; min-height: 28px; padding: 0; border: 1px solid black; border-radius: 8px; }
+.dragon-driver.light-control-borders button.keycap,
+.dragon-driver.light-control-borders .color-wheel-button { border-color: white; }
+.dragon-driver .rainbow-swatch:checked { outline: 2px solid currentColor; outline-offset: 2px; }

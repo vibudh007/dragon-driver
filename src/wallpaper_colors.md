@@ -1,0 +1,11 @@
+# Wallpaper image sampling
+
+`frame` accepts compressed PNG, JPEG or WebP data from the desktop daemon. `resized` bounds decoded dimensions and allocation. `fast_image_resize` resamples the decoded pixels to 584 × 204 with its bilinear convolution, the same triangle kernel used by the previous implementation. It processes the decoded pixel format directly and selects SIMD at runtime with a portable fallback. The full image fits the requested 29.2:10.2 aspect ratio without cropping. [Resizer and CPU support](https://github.com/Cykooz/fast_image_resize)
+
+`sample` scales the model's key rectangles to the full image and writes to their original matrix positions. `mean_color` reverses the vertical coordinate and averages RGB inside each rounded key mask, with transparent pixels composited onto black. `enhance` applies Wallpaper Aura's final HSV saturation and contrast adjustments to each average. It doubles saturation up to full saturation while retaining hue and applies a smooth value curve with a 6% black point and a 90% white point. The darkest colors use neutral RGB `[1, 1, 1]`. Key gaps and unpopulated positions receive no sample. [Wallpaper Aura](https://github.com/vibudh007/wallpaper-aura)
+
+## Latency audit
+
+The original unoptimized packages took 1.49–1.53 seconds to process a 3840 × 2160 desktop PNG, including around 1.1 seconds for resizing. The distribution script now uses Cargo's release profile. In optimized tests on two 4K PNGs and one 4K JPEG, triangle resizing with `image` took 26–33 ms, its box-style thumbnail took 9–17 ms, and `fast_image_resize` took 2.6–4.2 ms. Output stayed within one RGB level per channel on the K617M. The existing PNG decoder took 45–73 ms and `zune-png` took 117–147 ms on the same files. The selected path keeps the existing decoder and uses the faster triangle resizer. [Distribution build](../packaging/build-distributions.sh)
+
+The selected pipeline, with saturation and contrast enabled, processed the three 4K inputs in 39–82 ms. The daemon distinguishes source changes from edits to the current image. A COSMIC state notification that resolves to the same file skips the redundant delivery and decode. [Daemon subscription](wallpaper_source.md)

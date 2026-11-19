@@ -1,0 +1,16 @@
+# Managed by Dragon Driver
+[Unit]
+Description=Dragon Driver system access broker for UID %i
+Requires=dragon-driver-access@%i.socket
+After=dragon-driver-access@%i.socket
+
+[Service]
+ExecStart=/usr/local/libexec/dragon-driver/dragon-driver-daemon --system %i
+NoNewPrivileges=yes
+CapabilityBoundingSet=CAP_DAC_OVERRIDE
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+RestrictAddressFamilies=AF_UNIX
+RestrictSUIDSGID=yes
+UMask=0077

@@ -1,0 +1,10 @@
+#!/bin/sh
+set -eu
+if [ "$#" -ne 1 ] || [ "${1:-}" = --help ]; then
+    echo "Usage: dragon-driver-export-host DIRECTORY"
+    echo "Copy the keyboard daemon and setup files to an explicitly shared host directory."
+    [ "${1:-}" = --help ]
+    exit
+fi
+test -d "$1"
+cp -p -- /app/share/dragon-driver/host/* "$1"

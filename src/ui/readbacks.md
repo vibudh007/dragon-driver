@@ -1,0 +1,11 @@
+# Automatic device readback
+
+`Snapshot::read` runs on the device worker and collects link status, lighting modes and effect, idle timers, and Hall-effect limit and performance values where supported. An unavailable field stays unset. Each probe can recover a desynchronized read session before the next query. Recovery checks the original HID interface and device identity. Recovery does not replay writes.
+
+`Readbacks` belongs to one connected view. `on_snapshot` and `on_key` let the page builders listen for typed settings. `refresh` requests device-wide values on startup or focus return, clears older per-key results and prioritizes the selected key. The startup sweep reads one populated layout position per worker job so foreground operations can get through between reads. An unsuccessful key read stops the speculative sweep until the next refresh. A selected key gets its own read. The controller reuses cached keys, discards old generations and drops the entire cache on disconnect.
+
+`select` publishes the cached confirmed state or a pending state. `confirm` accepts a verified readback after a write. `invalidate` drops affected keys after a batch write. `invalidate_all` schedules fresh reads after a reset. The GTK callback retains widgets for its connected view while the timers and page actions hold weak references to the controller.
+
+GTK watches HID node creation, removal and access changes. Settings changes made elsewhere are reconciled on focus return. An unsolicited firmware notification for arbitrary settings changes has not been verified. The effect readback supplies mode and effect parameters. A custom RGB frame needs separate protocol evidence.
+
+While its window is active, the app polls once a second for the keyboard effect and the visible settings. Actuation checks the selected key, Lighting checks the side effect where available, and Device checks available connection and performance settings. The startup snapshot and key sweep take priority. A changed effect ID is saved to the [RON store](../palettes.md), and a snapshot carries the worker's saved palettes so the editor can discard a frame after a device reset. A same-value sample leaves the editor untouched.

@@ -1,0 +1,15 @@
+# Managed by Dragon Driver
+[Unit]
+Description=Dragon Driver desktop service
+Requires=dragon-driver.socket
+After=dragon-driver.socket graphical-session-pre.target
+PartOf=graphical-session.target
+
+[Service]
+ExecStart="%h/.local/lib/dragon-driver/dragon-driver-daemon" --managed
+NoNewPrivileges=yes
+RestrictAddressFamilies=AF_UNIX
+UMask=0077
+
+[Install]
+WantedBy=graphical-session.target

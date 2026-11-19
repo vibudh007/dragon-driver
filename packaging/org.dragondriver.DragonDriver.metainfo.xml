@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.dragondriver.DragonDriver</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-unknown</project_license>
+  <name>Dragon Driver</name>
+  <summary>Configure a supported Redragon keyboard</summary>
+  <description>
+    <p>Adjust key travel, lighting, profiles, and other keyboard settings.</p>
+  </description>
+  <launchable type="desktop-id">org.dragondriver.DragonDriver.desktop</launchable>
+  <content_rating type="oars-1.1"/>
+</component>

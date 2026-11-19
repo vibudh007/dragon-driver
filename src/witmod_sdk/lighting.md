@@ -1,0 +1,15 @@
+# SDK color blending
+
+`mix_color(foreground, background, weight, lookup)` implements the per-channel calculation recovered from `FUN_10008b10` for byte RGB inputs. It preserves the DLL's division by 256 after weighting by `weight` and `255 - weight`. It optionally applies the exact 256-byte lookup table copied from DLL file offset `0x3e558`, virtual address `0x1003f958`. The constant has SHA-256 `37f3f7b2862b23f7806f9f58b209b098de2fbfd2f2d834c7159709ab31c79b4e`.
+
+The vendor wrapper `CWitmodHid_lightColorMix` uses lighting state and key-grid coordinates. The [preview session](lighting/session.md) exposes the native counterparts of the setter, tick, input, and telemetry exports.
+
+## Preview effects
+
+`KeyboardPreview::steady` initializes mode 0 from `0x1000c0d0`. `breathing` creates mode 1 and uses `Breathing::new` to build its exact two-color or seven-color palette. `Breathing::tick` preserves the seven-tick pause and the first cell reaching zero before the rest of the grid. `pulse` creates the monochrome and spectrum variants of mode 3. `advance_spectrum` advances the RGB edge by six. The monochrome port preserves the vendor's pause counter advancing per cell. `key_fade` creates mode 6. `KeyFade::tick` advances brightness and its palette state for each cell. `sparkle` creates mode 9 and `Sparkle::tick` drives its seeded palette and fixed cell order. `row_fade` creates mode 12. `press` validates coordinates and routes events for the implemented reactive modes. `tick` advances one frame. `cell` reads a grid location, and `row_cells` and `row_major` map the native layout.
+
+Source update routines are `0x10009fb0`, `0x1000a810`, `0x1000b4a0`, `0x1000c4f0`, and `0x1000c040`. The sparkle table copies 132 bytes each from `0x1003f290` and `0x1003f318`. SHA-256 `5b257b11990c47d8eb6d12bfdca45f3263c37db59c4caf3aa1159ec48f7357a2`.
+
+`reset_side_levels` resets side brightness and optionally clears RGB for modes 0 and 5. [Side preview](lighting/side.md) adds mode 1. [Horizontal wave](lighting/wave.md) covers part of mode 2. `cross_fade` implements mode 11 and lights the union of the pressed row and column. The rainbow cross resets its RGB to the configured background after the last fade. Preview output exposes RGB and intensity. The [sequential](lighting/sequential.md), [rain](lighting/rain.md), [line and staggered ripple](lighting/ripple.md), and [ring and automatic ripple](lighting/ring.md) documents cover the remaining keyboard modes. The six side modes are documented in [side preview](lighting/side.md). `cells` borrows the current grid. `palette_transition`, `active_rows`, and `automatic_frame_flag` expose the values used by the EXE. `KeyboardRuntime` carries shared clocks, the PRNG, and trigger state across configuration changes. `cycle_spectrum` handles direction and step size for keyboard and side color cycles.
+
+The [vendor fixture test](../../tests/fixtures/vendor-sdk/README.md) compares RGB and brightness at six positions across the recorded frames with the original DLL.

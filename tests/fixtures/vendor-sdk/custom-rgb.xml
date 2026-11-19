@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Parameters profileIndex="1">
+    <config index="3" name="Colors" proFileAppName="" proFileAppIco="">
+        <light0 usingIndex="2" ledOpenOrClose="0" SynchronizeStatus="0" />
+        <light1 usingIndex="2" />
+        <light2 usingIndex="2" />
+        <customColor />
+        <customLight>
+            <customLed index="0" name="Custom 0" isUsing="UnUsing" usingFlagIndex="-1">
+                <item keyCode="41" codeName="Esc" indexX="0" indexY="0" colorR="65" colorG="66" colorB="67" transparentNum="128" />
+            </customLed>
+            <customLed index="1" name="Custom 1" isUsing="UnUsing" usingFlagIndex="-1">
+                <item keyCode="58" codeName="F1" indexX="0" indexY="2" colorR="68" colorG="69" colorB="70" transparentNum="128" />
+            </customLed>
+        </customLight>
+        <ribbon />
+        <onboardBinding />
+        <keyEvent />
+        <dpi />
+        <function>
+            <Setting feature1="0" feature2="0" feature3="0" feature4="1" />
+            <SleepTime lightSleepTime="600" keyboardSleepTime="30" />
+        </function>
+        <bindMacro />
+    </config>
+</Parameters>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Parameters profileIndex="1">
+    <config index="3" name="Alice &amp; Bob" proFileAppName="" proFileAppIco="">
+        <light0 usingIndex="2" ledOpenOrClose="0" SynchronizeStatus="0" />
+        <light1 usingIndex="2" linkStatus="0" />
+        <light2 usingIndex="2" linkStatus="0" />
+        <customColor />
+        <customLight />
+        <ribbon />
+        <onboardBinding />
+        <keyEvent />
+        <dpi />
+        <function>
+            <Setting feature1="0" feature2="0" feature3="0" feature4="1" />
+            <SleepTime lightSleepTime="600" keyboardSleepTime="30" />
+        </function>
+        <bindMacro />
+    </config>
+    <config index="1" name="Renamed" proFileAppName="" proFileAppIco="">
+        <light0 usingIndex="2" ledOpenOrClose="0" SynchronizeStatus="0" />
+        <light1 usingIndex="2" />
+        <light2 usingIndex="2" />
+        <customColor />
+        <customLight />
+        <ribbon />
+        <onboardBinding />
+        <keyEvent />
+        <dpi />
+        <function>
+            <Setting feature1="0" feature2="0" feature3="0" feature4="1" />
+            <SleepTime lightSleepTime="600" keyboardSleepTime="30" />
+        </function>
+        <bindMacro />
+    </config>
+</Parameters>

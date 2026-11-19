@@ -1,0 +1,35 @@
+[package]
+name = "dragon-driver"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.90"
+publish = false
+default-run = "dragon-driver"
+
+[features]
+default = ["gui"]
+gui = ["dep:gtk", "daemon"]
+daemon = ["dep:fast_image_resize", "dep:image", "dep:cosmic-protocols", "dep:gio", "dep:ron", "dep:serde", "dep:wayland-client", "dep:wayland-protocols-wlr"]
+
+[[bin]]
+name = "dragon-driver"
+path = "src/main.rs"
+required-features = ["gui"]
+
+[[bin]]
+name = "dragon-driver-daemon"
+path = "src/bin/dragon-driver-daemon.rs"
+required-features = ["daemon"]
+
+[dependencies]
+cosmic-protocols = { version = "0.2", default-features = false, features = ["client"], optional = true }
+fast_image_resize = { version = "6.1", features = ["image"], optional = true }
+gio = { version = "0.21", optional = true }
+gtk = { package = "gtk4", version = "0.10", features = ["v4_8"], optional = true }
+image = { version = "0.25", default-features = false, features = ["jpeg", "png", "webp"], optional = true }
+libc = "0.2"
+ron = { version = "0.10", optional = true }
+serde = { version = "1", features = ["derive"], optional = true }
+wayland-client = { version = "0.31", optional = true }
+wayland-protocols-wlr = { version = "0.3", features = ["client"], optional = true }
+xml-rs = "0.8"

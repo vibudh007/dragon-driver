@@ -1,0 +1,7 @@
+# Desktop bindings and foreground profiles
+
+The GTK app stores an installed application's desktop-entry ID and optional StartupWMClass. `choose_application` enumerates visible applications on the worker and presents the picker on GTK. `valid_id` only admits local desktop-entry names. `launch` resolves the entry through GIO. Imported Windows executable paths must be replaced with an installed Linux app.
+
+`Desktop::watch` opens an X11 foreground subscription when the user enables it. `poll` observes the active window at 250 ms intervals. `match_strength` prefers the application ID, then StartupWMClass, then a basename match. An ambiguous equal match selects no profile. `Follow::ready` waits for a stable match and limits upload frequency. The device worker checks focus again immediately before writing. Unlinked apps leave the current profile active. Automatic switching is opt-in for the current session and uses the linked Main profile with the selected Fn profile.
+
+The keyboard worker dispatches reported desktop key presses only for the configuration it acknowledged. `paste_target` captures the X11 input target so a delayed shortcut cannot follow a focus change. GTK owns the clipboard and the X11 adapter sends Ctrl+V. On Wayland, the text action stages the latest value and shows a Copy text button. The user activates that button in the focused GTK window, then pastes normally. Foreground automation currently uses X11's window-manager properties. [X11 adapter](desktop/x11.md)

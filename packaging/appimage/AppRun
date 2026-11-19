@@ -1,0 +1,22 @@
+#!/bin/sh
+set -eu
+bundle=$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd)
+case "${1:-}" in
+    --setup) exec "$bundle/usr/share/dragon-driver/host/setup-desktop-service.sh" --app "${APPIMAGE:?Launch setup from the AppImage}" ;;
+    --uninstall-service) exec "$bundle/usr/share/dragon-driver/host/setup-desktop-service.sh" --uninstall ;;
+esac
+binary="$bundle/usr/bin/dragon-driver"
+probe=--gtk-runtime-check
+if [ "${1:-}" = --cli ]; then
+    shift
+    binary="$bundle/usr/bin/dragonctl"
+    probe=--version
+fi
+data=${XDG_DATA_DIRS:-/usr/local/share:/usr/share}
+if LD_BIND_NOW=1 "$binary" "$probe" >/dev/null 2>&1; then
+    export XDG_DATA_DIRS="$data:$bundle/usr/share"
+else
+    export LD_LIBRARY_PATH="$bundle/usr/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+    export XDG_DATA_DIRS="$bundle/usr/share:$data"
+fi
+exec "$binary" "$@"

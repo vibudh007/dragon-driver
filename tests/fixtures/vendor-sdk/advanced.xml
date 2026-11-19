@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Parameters>
+    <configDKS name="SeniorKeyDKS" keyType="1" />
+    <configMT name="SeniorKeyMT" keyType="2" />
+    <configTGL name="SeniorKeyTGL" keyType="3" />
+    <strokeNum>
+        <DKSValue Value1="15" Value2="36" Value3="36" Value4="15" />
+    </strokeNum>
+</Parameters>
